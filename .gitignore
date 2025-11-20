@@ -1,0 +1,36 @@
+# Build artifacts
+/tmp/
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# Android
+*.apk
+*.ap_
+*.dex
+local.properties
+.gradle/
+build/
+captures/
+.navigation/
+output.json
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Gradle
+.gradle
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
