@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android' // enable Kotlin
+}
+
+android {
+    namespace = "com.wally.sdkdemo"
+    compileSdk 35  // 更新到最新SDK版本
+
+    defaultConfig {
+        applicationId "com.wally.sdkdemo"
+        minSdk 26  // 使用新的属性名
+        targetSdk 35  // 更新到最新版本
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+    // 更新Kotlin标准库版本匹配插件版本
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:2.0.21"
+
+    // 更新AndroidX依赖到最新版本
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+
+    // Network libraries for HTTP upload
+    implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    // 更新测试依赖
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+}
